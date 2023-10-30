@@ -1,4 +1,5 @@
-﻿using CollectionsExe.Collections.Models;
+﻿using CollectionsExe.Collections.Exercise;
+using CollectionsExe.Collections.Models;
 
 namespace CollectionsExe
 {
@@ -85,6 +86,8 @@ namespace CollectionsExe
             List<Rectangle> list = rectangles.ToList();
             
             #endregion
+            StudentList l= new StudentList(); 
+            l.Students
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using CollectionsExe.Collections.Exercise.Models;
@@ -14,7 +15,7 @@ namespace CollectionsExe.Collections.Exercise
 
         //Targil 1 - write the Property of StudentList called Students
         #region Properties
-       
+        public List<Student> Students { get; set; }
 
         #endregion
 
@@ -23,6 +24,7 @@ namespace CollectionsExe.Collections.Exercise
         public StudentList()
         {
 
+            Students=Student.FillList();
         }
         #endregion
 
@@ -34,6 +36,10 @@ namespace CollectionsExe.Collections.Exercise
 
         public Student FindStudentByName(string name)
         {
+            for(int i=0;i<Students.Count;i++)
+            {
+
+            }
             return null;
         }
         #endregion
