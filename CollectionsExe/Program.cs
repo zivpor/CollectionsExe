@@ -14,32 +14,49 @@ namespace CollectionsExe
 
             //Define 5 rectangles:
             // using empty c'tor:r1-size (2,3)
-            
+            Rectangle r1 = new Rectangle() { Length=2, Width=3};
 
             // other sizes: r2-(2,3), r-3(3,3),r-4(4,3),r-5(5,3)
+            Rectangle r2 = new Rectangle(2, 3);
+            Rectangle r3 = new Rectangle(3, 3);
+            Rectangle r4 = new Rectangle(5,3);
+            Rectangle r5= new Rectangle(5,3);   
           
             #endregion
 
             #region Add to List
             //Add rectangles to the list
-           
+            rectangles.Add(r1);
+            rectangles.Add(r2);
+            rectangles.Add(r3);
+            rectangles.Add(r4);
+            rectangles.Add(r5);
+            rectangles.Add(new Rectangle(5, 6));
             #endregion
 
             #region loop through list
             //loop through the list using count and the [] operator
 
             Console.WriteLine("loop through the list using count and the [] operator");
-           
+           for(int i = 0;i< rectangles.Count; i++)
+            {
+                Console.WriteLine(rectangles[i]);
+            }
 
             Console.WriteLine("Loop through the list using foreach");
-            //Loop through the list using foreaach
-         
-                #endregion
+            //Loop through the list using foreach
+            foreach(Rectangle r in rectangles)
+            {
+                Console.WriteLine(r);   
+            }
+
+            #endregion
 
 
-                #region Delete from list
-                //Delete from a list Remove And RemoveAt
-               
+            #region Delete from list
+            //Delete from a list Remove And RemoveAt
+            rectangles.Remove(r3);
+            rectangles.RemoveAt(3);
                 Console.WriteLine("after delete r5 and index 0");
              
                 #endregion
@@ -64,7 +81,7 @@ namespace CollectionsExe
                 //todo
                 #endregion
 
-            }
+            
             #endregion
         }
     }
