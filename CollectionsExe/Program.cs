@@ -58,13 +58,14 @@ namespace CollectionsExe
             rectangles.Remove(r3);
             rectangles.RemoveAt(3);
                 Console.WriteLine("after delete r5 and index 0");
-             
-                #endregion
 
-                #region Update  a list
+            #endregion
 
-                //Update an object in a list
-             
+            #region Update  a list
+
+            //Update an object in a list
+            rectangles[0] = r5;
+            rectangles[0].Length = 4;
                 Console.WriteLine("after placing r5 in index 0");
                 
                 #endregion
@@ -78,9 +79,10 @@ namespace CollectionsExe
               //todo
 
                 Console.WriteLine("Array");
-                //todo
-                #endregion
-
+            //todo
+            #endregion
+            Rectangle[] rectanglesArr= rectangles.ToArray();
+            List<Rectangle> list = rectangles.ToList();
             
             #endregion
         }
