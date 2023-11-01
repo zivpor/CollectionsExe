@@ -1,12 +1,14 @@
 ﻿using CollectionsExe.Collections.Exercise;
+using CollectionsExe.Collections.Exercise.Models;
 using CollectionsExe.Collections.Models;
+using System.Collections.Generic;
 
 namespace CollectionsExe
 {
     internal class Program
     {
         #region LIST
-       
+
         static void Main(string[] args)
         {
             #region Define List
@@ -15,14 +17,14 @@ namespace CollectionsExe
 
             //Define 5 rectangles:
             // using empty c'tor:r1-size (2,3)
-            Rectangle r1 = new Rectangle() { Length=2, Width=3};
+            Rectangle r1 = new Rectangle() { Length = 2, Width = 3 };
 
             // other sizes: r2-(2,3), r-3(3,3),r-4(4,3),r-5(5,3)
             Rectangle r2 = new Rectangle(2, 3);
             Rectangle r3 = new Rectangle(3, 3);
-            Rectangle r4 = new Rectangle(5,3);
-            Rectangle r5= new Rectangle(5,3);   
-          
+            Rectangle r4 = new Rectangle(5, 3);
+            Rectangle r5 = new Rectangle(5, 3);
+
             #endregion
 
             #region Add to List
@@ -39,16 +41,16 @@ namespace CollectionsExe
             //loop through the list using count and the [] operator
 
             Console.WriteLine("loop through the list using count and the [] operator");
-           for(int i = 0;i< rectangles.Count; i++)
+            for (int i = 0; i < rectangles.Count; i++)
             {
                 Console.WriteLine(rectangles[i]);
             }
 
             Console.WriteLine("Loop through the list using foreach");
             //Loop through the list using foreach
-            foreach(Rectangle r in rectangles)
+            foreach (Rectangle r in rectangles)
             {
-                Console.WriteLine(r);   
+                Console.WriteLine(r);
             }
 
             #endregion
@@ -58,7 +60,7 @@ namespace CollectionsExe
             //Delete from a list Remove And RemoveAt
             rectangles.Remove(r3);
             rectangles.RemoveAt(3);
-                Console.WriteLine("after delete r5 and index 0");
+            Console.WriteLine("after delete r5 and index 0");
 
             #endregion
 
@@ -67,27 +69,52 @@ namespace CollectionsExe
             //Update an object in a list
             rectangles[0] = r5;
             rectangles[0].Length = 4;
-                Console.WriteLine("after placing r5 in index 0");
-                
-                #endregion
+            Console.WriteLine("after placing r5 in index 0");
 
-                #region transforming list to array and to new list
-                //Copy to array ToArray()
-               
-                //Copy ToList()
+            #endregion
 
-                Console.WriteLine("Copied list");
-              //todo
+            #region transforming list to array and to new list
+            //Copy to array ToArray()
 
-                Console.WriteLine("Array");
+            //Copy ToList()
+
+            Console.WriteLine("Copied list");
+            //todo
+
+            Console.WriteLine("Array");
             //todo
             #endregion
-            Rectangle[] rectanglesArr= rectangles.ToArray();
+            Rectangle[] rectanglesArr = rectangles.ToArray();
             List<Rectangle> list = rectangles.ToList();
-            
+
             #endregion
-            StudentList l= new StudentList(); 
-            l.Students
+            List<Student> l = new List<Student>();
+
+            Func< int, int> classes = (kita) =>
+            {
+               int counter = 0;
+               for (int i = 0;i < list.Count;i++)
+               {
+                    if (l[i].Kita == kita)
+                    {
+                        counter++;
+                    }
+               }
+               return counter;
+            };
+
+            Func<string, string> names = (name) =>
+            {
+                string counter = "";
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (l[i].Name == name)
+                    {
+                        counter= name;
+                    }
+                }
+                return counter;
+            };
         }
     }
 }
